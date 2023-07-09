@@ -207,7 +207,7 @@ class Model:
             logits=logits)
         class_id = Model.phrases2classes(phrases=phrases, classes=classes)
         detections.class_id = class_id
-        return detections
+        return detections, boxes, logits
 
     @staticmethod
     def preprocess_image(image_bgr: np.ndarray) -> torch.Tensor:
